@@ -1,0 +1,6 @@
+wsl -d docker-desktop sysctl -w vm.max_map_count=262144
+docker-compose up
+docker exec -it ksqldb ksql http://ksqldb:8088
+docker logs -f kafka-connect --details
+
+kibana --> localhost:5601
